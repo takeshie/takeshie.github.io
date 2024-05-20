@@ -142,8 +142,6 @@ function clickF2() {
     var filenames=filename.split("\\");
     filename=filenames[filenames.length-1];
     filename = filename.split('.')[0];
-	console.log(filename);
-    $("#lb").text("OK了");
 	
     lowfile = "object/hyper/fortest/" + filename + '.glb'
     var modelviewer = document.getElementById('input1');
