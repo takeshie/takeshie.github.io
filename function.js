@@ -142,13 +142,11 @@ function clickF2() {
     var filenames=filename.split("\\");
     filename=filenames[filenames.length-1];
     filename = filename.split('.')[0];
-	//console.log(filename);
-    // $("#lb").text("OK了");
-    lowfile = "object/lpi/othercase/" + filename + '.glb'
+    lowfile = "object/hyper/fortest/" + filename + '.glb'
     var modelviewer = document.getElementById('global1');
 	modelviewer.setAttribute('src', lowfile);
 
-    highfile = "object/lpi/othercase/" + filename + '_local.glb'
+    highfile = "object/lpi/fortest/" + filename + '_output.glb'
     var modelviewer = document.getElementById('local1');
 	modelviewer.setAttribute('src', highfile);
 }
