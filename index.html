@@ -163,15 +163,16 @@
       
       <table class="dataintable">
       <tr>
-      <th style="width:50%;">输入</th>
-      <th style="width:50%;">输出</th>
+      <th style="width:33.3%;">输入</th>
+      <th style="width:33.3%;">输出</th>
+      <th style="width:33.3%;">真实结果</th>
       </tr>
       
       <tr>
         <td>
           <model-viewer
           bounds="tight"
-          id="global1"
+          id="input1"
           enable-pan
           src=""
           ar
@@ -185,7 +186,21 @@
         <td>
           <model-viewer
           bounds="tight"
-          id="local1"
+          id="output1"
+          enable-pan
+          src=""
+          ar
+          auto-rotate
+          ar-modes="webxr scene-viewer quick-look"
+          camera-controls
+          shadow-intensity="1"
+          camera-orbit="auto auto 180deg"
+          />
+        </td>
+        <td>
+          <model-viewer
+          bounds="tight"
+          id="gt1"
           enable-pan
           src=""
           ar
