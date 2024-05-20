@@ -154,7 +154,7 @@ function clickF2() {
 	modelviewer.setAttribute('src', highfile);
 	
     highfile = "object/hyper/fortest/" + filename + '_gt.glb'
-    var modelviewer = document.getElementById('gt');
+    var modelviewer = document.getElementById('gt1');
 	modelviewer.setAttribute('src', highfile);
 }
 
