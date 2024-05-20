@@ -144,12 +144,17 @@ function clickF2() {
     filename = filename.split('.')[0];
 	console.log(filename);
     $("#lb").text("OK了");
+	
     lowfile = "object/hyper/fortest/" + filename + '.glb'
     var modelviewer = document.getElementById('input1');
 	modelviewer.setAttribute('src', lowfile);
 
     highfile = "object/hyper/fortest/" + filename + '_output.glb'
     var modelviewer = document.getElementById('output1');
+	modelviewer.setAttribute('src', highfile);
+	
+    highfile = "object/hyper/fortest/" + filename + '_gt.glb'
+    var modelviewer = document.getElementById('gt');
 	modelviewer.setAttribute('src', highfile);
 }
 
