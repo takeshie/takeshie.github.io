@@ -138,10 +138,12 @@ function getFile2(){
 var filename="";
 function clickF2() {
     filename=$("#getF2").val();
-    console.log(filename);
+    //console.log(filename);
     var filenames=filename.split("\\");
     filename=filenames[filenames.length-1];
     filename = filename.split('.')[0];
+	console.log(filename);
+    $("#lb").text("OK了");
     lowfile = "object/hyper/fortest/" + filename + '.glb'
     var modelviewer = document.getElementById('input1');
 	modelviewer.setAttribute('src', lowfile);
