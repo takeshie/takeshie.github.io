@@ -143,11 +143,11 @@ function clickF2() {
     filename=filenames[filenames.length-1];
     filename = filename.split('.')[0];
     lowfile = "object/hyper/fortest/" + filename + '.glb'
-    var modelviewer = document.getElementById('global1');
+    var modelviewer = document.getElementById('input1');
 	modelviewer.setAttribute('src', lowfile);
 
-    highfile = "object/lpi/fortest/" + filename + '_output.glb'
-    var modelviewer = document.getElementById('local1');
+    highfile = "object/hyper/fortest/" + filename + '_output.glb'
+    var modelviewer = document.getElementById('output1');
 	modelviewer.setAttribute('src', highfile);
 }
 
