@@ -1,1098 +1,349 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE HTML>
+<html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="description"
-        content="Learning Consistency-Aware Unsigned Distance Functions Progressively from Raw Point Clouds.">
-  <meta name="keywords" content="系统演示">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>系统演示</title>
-  <link rel="stylesheet" href="./style.css">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <!-- NOTE: Do not scrape the code from this page directly, as it includes analytics tags. You are welcome to use the HTML in this page, but please do so by cloning the github repo linked at the bottom. -->
   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script type="text/javascript" src="Apps/threejs/build/three.js"></script>
-    <script type="text/javascript" src="Apps/threejs/examples/js/loaders/OBJLoader.js"></script>
-    <script type="text/javascript" src="Apps/threejs/examples/js/controls/OrbitControls.js"></script>
-    <script type="text/javascript" src="Apps/threejs/examples/js/loaders/MTLLoader.js"></script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QSFRPR5L7E"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
-    gtag('config', 'G-PYVRSFMDRL');
+    gtag('config', 'G-QSFRPR5L7E');
   </script>
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
+  <title>Takeshi Noda | 野田豪</title>
 
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
-  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
+  <meta name="author" content="Takeshi Noda | 野田豪">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
-  <!-- <script type="text/javascript" src="./gb3d_bundle.js"></script> -->
-  
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐹</text></svg>">
 </head>
+
 <body>
+  <table
+    style="width:100%;max-width:850px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+    <tbody>
+      <tr style="padding:0px">
+        <td style="padding:0px">
+          <table
+            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+              <tr style="padding:0px">
+                <td style="padding:2.5%;width:62%;vertical-align:middle">
+                  <p style="text-align:center">
+                    <name>Takeshi Noda | 野田豪</name>
+                  </p>
+                  <p>I am currently a second-year Ph.D candidate. student in Software Engineering at the <a href="https://www.thss.tsinghua.edu.cn/">School of Software</a>,
+
+                    <a href="https://www.tsinghua.edu.cn/">Tsinghua University</a>, advised by Prof. <a href="https://yushen-liu.github.io/">Yu-Shen Liu</a>. I have
+                     been studying at Tsinghua University since 2017, where I also received bachelor and master degrees under the supervision of Prof. Yu-Shen Liu.
+
+                  </p>
+                  <p>
+                    My research interests lie at the intersection of 3D computer vision and computer graphics, with a focus on 3D surface reconstruction,
+                    3D foundation models and feed-forward models. 
+                  </p>
+                  <p style="text-align:center">
+                    <a href="mailto:yeth24@mails.tsinghua.edu.cn">Email</a> &nbsp/&nbsp
+                    <a href="https://scholar.google.com.hk/citations?user=MqN5Y0cAAAAJ&hl=zh-CN">Google Scholar</a>
+                    &nbsp/&nbsp
+                    <a href="https://github.com/takeshie">Github</a>
+                  </p>
+                </td>
+                <td style="padding:2.5%;width:40%;max-width:40%">
+                  <a href="media/profile.jpg"><img style="width:90%;max-width:100%;max-height:220px;object-fit:cover;" alt="profile photo"
+                      src="media/profile.jpg" class="hoverZoomLink"></a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table
+            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+              <tr>
+                <td style="padding:10px 20px;width:100%;vertical-align:middle">
+                  <heading>Recent News</heading>
+                  
+                  <ul>
+                    <li><strong>02/2026:</strong> Our paper <a href='https://takeshie.github.io/GSPrior/'>GSPrior</a> got accepted to <b>CVPR 2026.</b></li>
+                    <li><strong>11/2025:</strong> I was awarded the <strong>National Natural Science Foundation of China (NSFC)</strong> Doctoral Student Special Program grant, Top 1%. </li> 
+                    <li><strong>02/2025:</strong> Our paper <a href='https://takeshie.github.io/Bijective-SDF/'>Bijective-SDF</a> got accepted to <b>CVPR 2025.</b></li>
+                    <li><strong>09/2024:</strong> I awarded the fully funded <strong>Chinese Government Scholarship (CSC)</strong>, Top 1%.</li>
+                    <li><strong>09/2024:</strong> Our paper <a href='https://takeshie.github.io/MultiPull/'>MultiPull</a> got accepted to <b>NeurIPS 2024.</b></li>
+                    <li><strong>08/2024:</strong> Started PhD journey at Tsinghua University. </li>      
+                  </ul>
+
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table
+            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+              <tr>
+                <td style="padding:10px 20px;width:100%;vertical-align:middle">
+                  <heading>Research</heading>
+                  <p>(<strong>*</strong> Equal Contribution)</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
 
 
-<section class="hero">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-2 publication-title">基于超网络和多尺度频域编码的三维点云隐式表达学习</h1>
-          <div class="column is-full_width">
-            <h2 class="title is-4">系统演示</h2>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="10">
+            <tbody>
+              <tr onmouseout="Bijective2026_stop()" onmouseover="Bijective2026_start()">
+                <td width="28%">
+                  <div class="one">
+                    <div class="two" id="Bijective2026" style="opacity: 0;">
+                      <video width="225" muted="" autoplay="" loop="">
+                        <source src="media/GSPrior_after.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                      </video>
+                    </div>
+                    <img src="media/GSPrior_before.png" width="225" , height="120">
+                  </div>
 
-</section>
+                  <script type="text/javascript">
+                    function Bijective2026_start() {
+                      document.getElementById('Bijective2026').style.opacity = "1";
+                    }
+                    function Bijective2026_stop() {
+                      document.getElementById('Bijective2026').style.opacity = "0";
+                    }
+                    Bijective2026_stop()
+                  </script>
+                </td>
 
-
-<section class="section">
-  <div class="container is-max-desktop">
-
-    <!-- Method. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3" style="margin-top: -20px">第二章 基于局部表面编码的神经隐式表达方法</h2>
-      </div>
-    </div>
-  </div>
-  <div class="container is-centered">
-    <!-- <div class="container is-max-desktop"> -->
-
-      <!-- Results. -->
-    <!-- <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths"> -->
-
-
-        
-	  <p class="view-3D-title">
-         ShapeNet:
-      </p>
-    
-    
-      <div>
-        <!-- <h2><strong>We reconstruct highly accurate surfaces from 10K points under ShapeNet Cars dataset.</strong></h2> -->
-        
-        <table class="dataintable">
-        <tr>
-        <th style="width:50%;">输入点云</th>
-        <th style="width:50%;">三维重建结果</th>
-        </tr>
-        
-        <tr>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/hyper/shapenet/pt_case1.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/hyper/shapenet/case1.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/hyper/shapenet/pt_case2.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/hyper/shapenet/case2.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/hyper/shapenet/pt_case3.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/hyper/shapenet/case3.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/hyper/shapenet/pt_case4.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/hyper/shapenet/case4.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-        </tr>
-		<tr>
-          
-        </table>
-      </div>
-	  
-	  <p class="view-3D-title">
-         FAMOUS:
-      </p>
-    
-    
-      <div>
-        <!-- <h2><strong>We reconstruct highly accurate surfaces from 10K points under ShapeNet Cars dataset.</strong></h2> -->
-        
-        <table class="dataintable">
-        <tr>
-        <th style="width:50%;">点云输入</th>
-        <th style="width:50%;">三维重建结果</th>
-        </tr>
-        
-        <tr>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/hyper/famous/pt_case1.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/hyper/famous/case1.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/hyper/famous/pt_case2.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/hyper/famous/case2.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/hyper/famous/pt_case3.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/hyper/famous/case3.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-        </tr>         
-        </table>
-      </div>
-	  
-	  <p class="view-3D-title">
-         ABC:
-      </p>
-    
-    
-      <div>
-        <!-- <h2><strong>We reconstruct highly accurate surfaces from 10K points under ShapeNet Cars dataset.</strong></h2> -->
-        
-        <table class="dataintable">
-        <tr>
-        <th style="width:50%;">点云输入</th>
-        <th style="width:50%;">三维重建结果</th>
-        </tr>
-        
-        <tr>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/hyper/abc/pt_case1.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/hyper/abc/case1.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/hyper/abc/pt_case2.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/hyper/abc/case2.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/hyper/abc/pt_case3.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/hyper/abc/case3.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-        </tr>         
-        </table>
-      </div>     
-          
-	  <p class="view-3D-title">
-         3DScene:
-      </p>
-    
-    
-      <div>
-        <!-- <h2><strong>We reconstruct highly accurate surfaces from 10K points under ShapeNet Cars dataset.</strong></h2> -->
-        
-        <table class="dataintable">
-        <tr>
-        <th style="width:50%;">点云输入</th>
-        <th style="width:50%;">三维重建结果</th>
-        </tr>
-        
-        <tr>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/hyper/scene/pt_case1.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/hyper/scene/case1.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-        </tr>     
-        </table>
-      </div>
+                <td width="65%" valign="top">
+                  <a href="https://takeshie.github.io/Bijective-SDF/">
+                    <papertitle>3D Gaussian Splatting with Self-Constrained Priors for High Fidelity Surface Reconstruction
+                    </papertitle>
+                  </a>
+                  <br>
+                   <strong>Takeshi Noda</strong>, 
+                  <a href="https://yushen-liu.github.io/"> Yu-Shen Liu</a>,
+                  <a href="https://h312h.github.io/"> Zhizhong han</a>
+                  <br>
+                  <em>IEEE/CVF Conference on Computer Vision and Pattern Recognition <b> (CVPR)</b></em>, 2026 
+                  <br>
+                  <a href="https://takeshie.github.io/GSPrior/">project page</a> |
+                  <a href="https://arxiv.org/pdf/2603.19682">arXiv</a> |
+                  <a href="https://github.com/takeshie/GSPrior/">code</a>
+                  <p align="justify" , style="font-size:13px">GSPrior reconstructs high-fidelity surfaces by deriving TSDF-based self-constrained priors from rendered depths to geometrically refine 3D Gaussians without external supervision.
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
 
-          
-    <!-- Method. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3" style="margin-top: 0px">第三章 基于多尺度频域编码的点云隐式表达学习</h2>
-      </div>
-    </div>
-  <div class="container is-centered">
-    <!-- <div class="container is-max-desktop"> -->
 
-      <!-- Results. -->
-    <!-- <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths"> -->
-	  
-	  <p class="view-3D-title">
-         ShapeNet:
-      </p>
-    
-    
-      <div>
-        <!-- <h2><strong>We reconstruct highly accurate surfaces from 10K points under ShapeNet Cars dataset.</strong></h2> -->
-        
-        <table class="dataintable">
-        <tr>
-        <th style="width:50%;">输入点云</th>
-        <th style="width:50%;">三维重建结果</th>
-        </tr>
-        
-        <tr>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/mmp/shapenet/pt_case1.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/mmp/shapenet/case1.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/mmp/shapenet/pt_case3.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/mmp/shapenet/case3.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/mmp/shapenet/pt_case4.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/mmp/shapenet/case4.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-        </tr>
-		<tr>
-          
-        </table>
-      </div>
-	  
-	  <p class="view-3D-title">
-         FAMOUS:
-      </p>
-    
-    
-      <div>
-        <!-- <h2><strong>We reconstruct highly accurate surfaces from 10K points under ShapeNet Cars dataset.</strong></h2> -->
-        
-        <table class="dataintable">
-        <tr>
-        <th style="width:50%;">点云输入</th>
-        <th style="width:50%;">三维重建结果</th>
-        </tr>
-        
-        <tr>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/mmp/famous/pt_case1.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/mmp/famous/case1.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/mmp/famous/pt_case2.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/mmp/famous/case2.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/mmp/famous/pt_case3.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/mmp/famous/case3.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-        </tr>         
-        </table>
-      </div>
-	  
-	  <p class="view-3D-title">
-         SRB:
-      </p>
-    
-    
-      <div>
-        <!-- <h2><strong>We reconstruct highly accurate surfaces from 10K points under ShapeNet Cars dataset.</strong></h2> -->
-        
-        <table class="dataintable">
-        <tr>
-        <th style="width:50%;">点云输入</th>
-        <th style="width:50%;">三维重建结果</th>
-        </tr>
-        
-        <tr>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/mmp/srb/pt_case1.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/mmp/srb/case1.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/mmp/srb/pt_case2.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/mmp/srb/case2.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/mmp/srb/pt_case3.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/mmp/srb/case3.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-        </tr>         
-        </table>
-      </div>
-	  <p class="view-3D-title">
-         D-FAUST:
-      </p>
-    
-    
-      <div>
-        <!-- <h2><strong>We reconstruct highly accurate surfaces from 10K points under ShapeNet Cars dataset.</strong></h2> -->
-        
-        <table class="dataintable">
-        <tr>
-        <th style="width:50%;">点云输入</th>
-        <th style="width:50%;">三维重建结果</th>
-        </tr>
-        
-        <tr>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/mmp/dfaust/pt_case1.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/mmp/dfaust/case1.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/mmp/dfaust/pt_case2.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/mmp/dfaust/case2.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/mmp/dfaust/pt_case3.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/mmp/dfaust/case3.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-        </tr>         
-        </table>
-      </div>
-	  
-	  <p class="view-3D-title">
-         Thingi10K:
-      </p>
-    
-    
-      <div>
-        <!-- <h2><strong>We reconstruct highly accurate surfaces from 10K points under ShapeNet Cars dataset.</strong></h2> -->
-        
-        <table class="dataintable">
-        <tr>
-        <th style="width:33.3%;">三维重建结果(1)</th>
-        <th style="width:33.3%;">三维重建结果(2)</th>
-        <th style="width:33.3%;">三维重建结果(3)</th>
-        </tr>
-        
-        <tr>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/mmp/thingi/case1.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/mmp/thingi/case2.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/mmp/thingi/case3.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-        </tr>        
-        </table>
-      </div>
-        </tr>
-		
-      </div>
-	  <p class="view-3D-title">
-         3DScene:
-      </p>
-    
-    
-      <div>
-        <!-- <h2><strong>We reconstruct highly accurate surfaces from 10K points under ShapeNet Cars dataset.</strong></h2> -->
-        
-        <table class="dataintable">
-        <tr>
-        <th style="width:50%;">点云输入</th>
-        <th style="width:50%;">三维重建结果</th>
-        </tr>
-        
-        <tr>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/mmp/scene/pt_case1.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/mmp/scene/case1.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/mmp/scene/pt_case2.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/mmp/scene/case2.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-        </tr>        
-        </table>
-      </div>
-	  
-	  <p class="view-3D-title">
-         KITTI:
-      </p>
-      <div>
-        <!-- <h2><strong>We reconstruct highly accurate surfaces from 10K points under ShapeNet Cars dataset.</strong></h2> -->
-        
-        <table class="dataintable">
-        <tr>
-        <th style="width:50%;">点云输入</th>
-        <th style="width:50%;">三维重建结果</th>
-        </tr>
-        
-        <tr>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/mmp/kitti/pt_case1.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/mmp/kitti/case1.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-        </tr>    
-        <tr>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/mmp/kitti/pt_case2.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-          <td>
-            <model-viewer
-            bounds="tight"
-            enable-pan
-            src="./object/mmp/kitti/case2.glb"
-            ar
-			auto-rotate
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-            shadow-intensity="1"
-            camera-orbit="auto auto 180deg"
-            />
-          </td>
-        </tr>   
-        </table>
-      </div>
-  </div>
-</section>
-<script src="function.js"></script>
-<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 
+
+          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="10">
+            <tbody>
+              <tr onmouseout="Bijective_stop()" onmouseover="Bijective_start()">
+                <td width="28%">
+                  <div class="one">
+                    <div class="two" id="Bijective" style="opacity: 0;">
+                      <video width="225" muted="" autoplay="" loop="">
+                        <source src="media/Video_Bijective_after.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                      </video>
+                    </div>
+                    <img src="media/Bijective_before.png" width="225" , height="120">
+                  </div>
+
+                  <script type="text/javascript">
+                    function Bijective_start() {
+                      document.getElementById('Bijective').style.opacity = "1";
+                    }
+                    function Bijective_stop() {
+                      document.getElementById('Bijective').style.opacity = "0";
+                    }
+                    Bijective_stop()
+                  </script>
+                </td>
+
+                <td width="65%" valign="top">
+                  <a href="https://takeshie.github.io/Bijective-SDF/">
+                    <papertitle>Learning Bijective Surface Parameterization for Inferring Signed Distance Functions from Sparse Point Clouds with Grid Deformation
+                    </papertitle>
+                  </a>
+                  <br>
+                   <strong>Takeshi Noda*</strong>, 
+                  <a href="https://chenchao15.github.io/"> Chao Chen*</a>,
+                  <a href="https://junshengzhou.github.io/"> Junsheng Zhou</a>,  
+                  <a href="https://weiqi-zhang.github.io/">Weiqi Zhang</a>, 
+                  <a href="https://yushen-liu.github.io/"> Yu-Shen Liu</a>,
+                  <a href="https://h312h.github.io/"> Zhizhong han</a>
+                  <br>
+                  <em>IEEE/CVF Conference on Computer Vision and Pattern Recognition <b> (CVPR)</b></em>, 2025 
+                  <br>
+                  <a href="https://takeshie.github.io/Bijective-SDF/">project page</a> |
+                  <a href="https://arxiv.org/abs/2503.23670">arXiv</a> |
+                  <a href="https://takeshie.github.io/Bijective-SDF/">code</a>
+                  <p align="justify" , style="font-size:13px">Bijective-SDF improves 3D surface reconstruction from sparse point clouds by learning bijective surface parameterization and optimizing grid deformation.
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+
+
+          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="10">
+            <tbody>
+              <tr onmouseout="MultiPull_stop()" onmouseover="MultiPull_start()">
+                <td width="28%">
+                  <div class="one">
+                    <div class="two" id="MultiPull" style="opacity: 0;">
+                      <video width="225" muted="" autoplay="" loop="">
+                        <source src="media/Video_MultiPull_after.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                      </video>
+                    </div>
+                    <img src="media/MultiPull_before.png" width="225" , height="120">
+
+                  </div>
+
+                  <script type="text/javascript">
+                    function MultiPull_start() {
+                      document.getElementById('MultiPull').style.opacity = "1";
+                    }
+                    function MultiPull_stop() {
+                      document.getElementById('MultiPull').style.opacity = "0";
+                    }
+                    MultiPull_stop()
+                  </script>
+                </td>
+
+                <td width="65%" valign="top">
+                  <a href="https://takeshie.github.io/MultiPull/">
+                    <papertitle>MultiPull: Detailing Signed Distance Functions by
+                      Pulling Multi-Level Queries at Multi-Step
+                    </papertitle>
+                  </a>
+                  <br>
+                   <strong>Takeshi Noda*</strong>, 
+                  <a href="https://chenchao15.github.io/"> Chao Chen*</a>,
+                  <a href="https://weiqi-zhang.github.io/">Weiqi Zhang</a>, 
+                  Xinhai Liu,
+                  <a href="https://yushen-liu.github.io/"> Yu-Shen Liu</a>,
+                  <a href="https://h312h.github.io/"> Zhizhong han</a>
+                  <br>
+                  <em>Conference on Neural Information Processing Systems <b> (NeurIPS)</b></em>, 2024 
+                  <br>
+                  <a href="https://takeshie.github.io/MultiPull/">project page</a> |
+                  <a href="https://arxiv.org/abs/2411.01208v1">arXiv</a> |
+                  <a href="https://github.com/takeshie/MultiPull">code</a>
+                  <p align="justify" , style="font-size:13px">MultiPull is a novel method that improves 3D surface reconstruction from point clouds by optimizing multi-scale implicit fields and leveraging frequency features. 
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table
+            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+              <tr>
+                <td style="padding:10px 20px;width:100%;vertical-align:middle">
+                  <heading>Honors and Awards</heading>
+                  <ul>
+                  </li>
+                  <li> <strong>National Natural Science Foundation of China (NSFC)</strong> (国家自然科学基金-博士生专项, Top 1%), 2025.
+                  </li>
+                    <li><strong>Chinese Government Scholarship (CSC)</strong> (中国政府奖学金 Top 1%), 2024-2026.
+                    <li><strong>清华大学奖学金</strong>, 2021-2024.
+                  </ul>
+
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table
+            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+              <tr>
+                <td style="padding:10px;width:100%;vertical-align:middle">
+                  <heading>Teaching</heading>
+                  <ul>
+                    <li> Fundamentals of Programming (34100063-1), TA 2024-2026
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table
+            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+              <tr>
+                <td style="padding:10px 20px;width:100%;vertical-align:middle">
+                  <heading>Academic Services</heading>
+                  <ul>
+                    <li> <strong>Program Committee Member</strong>: AAAI
+                    </li>
+                    <li> <strong>Conference Reviewer</strong>: CVPR,  NeurIPS, ICCV, ECCV, ICML, AAAI, SIGGRAPH-Asia
+                    </li>
+                    <li> <strong>Journal Reviewer</strong>: TVCG, TIP, CAD
+                    </li>
+
+                  </ul>
+
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- <table width="100%" align="center" border="0" cellspacing="0" cellpadding="10">
+            <heading>Academic Services</heading>
+              <tr>
+                <td>
+                  
+                  <ul>
+                      <li> <strong>Conference Reviewer</strong>: CVPR, ICCV, NeurIPS <br> -->
+          <!-- <li> <strong>Journal Reviewer</strong>: TPAMI, CVIU
+                  </ul>
+                </td>
+              </tr>
+          </table> -->
+
+          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="10">
+            <tr>
+              <td>
+                <br>
+                <p align="right">
+                  <font size="2">
+                    template adapted from <a href="https://jonbarron.info/">
+                      <font size="2">this awesome website</font>
+                    </a>
+                    <br>
+                    Last updated: April 2026
+                    <br>
+
+                  </font>
+                </p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </body>
+
 </html>
