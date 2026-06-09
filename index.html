@@ -23,6 +23,20 @@
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
   <link rel="icon"
     href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐹</text></svg>">
+
+<style>
+strong {
+    color: #c00000;
+    font-weight: 700;
+}
+strong.date {
+    color: #000000;
+}
+strong.author {
+    color: #000000;
+}
+</style>
+
 </head>
 
 <body>
@@ -72,12 +86,12 @@
                   <heading>Recent News</heading>
                   
                   <ul>
-                    <li><strong>02/2026:</strong> Our paper <a href='https://takeshie.github.io/GSPrior/'>GSPrior</a> got accepted to <b>CVPR 2026.</b></li>
-                    <li><strong>11/2025:</strong> I was awarded the <strong>National Natural Science Foundation of China (NSFC)</strong> Doctoral Student Special Program grant, Top 1%. </li> 
-                    <li><strong>02/2025:</strong> Our paper <a href='https://takeshie.github.io/Bijective-SDF/'>Bijective-SDF</a> got accepted to <b>CVPR 2025.</b></li>
-                    <li><strong>09/2024:</strong> I awarded the fully funded <strong>Chinese Government Scholarship (CSC)</strong>, Top 1%.</li>
-                    <li><strong>09/2024:</strong> Our paper <a href='https://takeshie.github.io/MultiPull/'>MultiPull</a> got accepted to <b>NeurIPS 2024.</b></li>
-                    <li><strong>08/2024:</strong> Started PhD journey at Tsinghua University. </li>      
+                    <li><strong class="date">02/2026:</strong> Our paper <a href='https://takeshie.github.io/GSPrior/'>GSPrior</a> got accepted to <strong>CVPR 2026</strong>.</li>
+                    <li><strong class="date">11/2025:</strong> I was awarded the <strong>National Natural Science Foundation of China (NSFC)</strong> Doctoral Student Special Program grant, Top 1%. </li> 
+                    <li><strong class="date">02/2025:</strong> Our paper <a href='https://takeshie.github.io/Bijective-SDF/'>Bijective-SDF</a> got accepted to <strong>CVPR 2025</strong>.</li>
+                    <li><strong class="date">09/2024:</strong> I awarded the fully funded <strong>Chinese Government Scholarship (CSC)</strong>, Top 1%.</li>
+                    <li><strong class="date">09/2024:</strong> Our paper <a href='https://takeshie.github.io/MultiPull/'>MultiPull</a> got accepted to <strong>NeurIPS 2024</strong>.</li>
+                    <li><strong class="date">08/2024:</strong> Started PhD journey at Tsinghua University. </li>      
                   </ul>
 
                 </td>
@@ -130,7 +144,7 @@
                     </papertitle>
                   </a>
                   <br>
-                   <strong>Takeshi Noda</strong>, 
+                   <strong class="author">Takeshi Noda</strong>, 
                   <a href="https://yushen-liu.github.io/"> Yu-Shen Liu</a>,
                   <a href="https://h312h.github.io/"> Zhizhong han</a>
                   <br>
@@ -181,8 +195,8 @@
                     </papertitle>
                   </a>
                   <br>
-                   <strong>Takeshi Noda*</strong>, 
-                  <a href="https://chenchao15.github.io/"> Chao Chen*</a>,
+                   <strong class="author">Takeshi Noda*</strong>, 
+                  <a href="https://chenchao15.github.io/"> <strong class="author">Chao Chen*</strong></a>,
                   <a href="https://junshengzhou.github.io/"> Junsheng Zhou</a>,  
                   <a href="https://weiqi-zhang.github.io/">Weiqi Zhang</a>, 
                   <a href="https://yushen-liu.github.io/"> Yu-Shen Liu</a>,
@@ -235,8 +249,8 @@
                     </papertitle>
                   </a>
                   <br>
-                   <strong>Takeshi Noda*</strong>, 
-                  <a href="https://chenchao15.github.io/"> Chao Chen*</a>,
+                   <strong class="author">Takeshi Noda*</strong>, 
+                  <a href="https://chenchao15.github.io/"> <strong class="author">Chao Chen*</strong></a>,
                   <a href="https://weiqi-zhang.github.io/">Weiqi Zhang</a>, 
                   Xinhai Liu,
                   <a href="https://yushen-liu.github.io/"> Yu-Shen Liu</a>,
@@ -261,11 +275,21 @@
                 <td style="padding:10px 20px;width:100%;vertical-align:middle">
                   <heading>Honors and Awards</heading>
                   <ul>
-                  </li>
-                  <li> <strong>National Natural Science Foundation of China (NSFC)</strong> (国家自然科学基金-博士生专项, Top 1%), 2025.
-                  </li>
-                    <li><strong>Chinese Government Scholarship (CSC)</strong> (中国政府奖学金 Top 1%), 2024-2026.
-                    <li><strong>清华大学奖学金</strong>, 2021-2024.
+                    <li>
+                      National Natural Science Foundation of China
+                      (NSFC)
+                      (国家自然科学基金-博士生专项, Top 1%), 2025.
+                    </li>
+                  
+                    <li>
+                      Chinese Government Scholarship
+                      (CSC)
+                      (中国政府奖学金 Top 1%), 2024-2026.
+                    </li>
+                  
+                    <li>
+                      清华大学奖学金, 2021-2024.
+                    </li>
                   </ul>
 
                 </td>
@@ -295,32 +319,23 @@
                 <td style="padding:10px 20px;width:100%;vertical-align:middle">
                   <heading>Academic Services</heading>
                   <ul>
-                    <li> <strong>Program Committee Member</strong>: AAAI
+                    <li>Program Committee Member: AAAI</li>
+                  
+                    <li>
+                      Conference Reviewer:
+                      CVPR, NeurIPS, ICCV, ECCV, ICML, AAAI, SIGGRAPH Asia
                     </li>
-                    <li> <strong>Conference Reviewer</strong>: CVPR,  NeurIPS, ICCV, ECCV, ICML, AAAI, SIGGRAPH-Asia
+                  
+                    <li>
+                      Journal Reviewer:
+                      TVCG, TIP, CAD
                     </li>
-                    <li> <strong>Journal Reviewer</strong>: TVCG, TIP, CAD
-                    </li>
-
                   </ul>
 
                 </td>
               </tr>
             </tbody>
           </table>
-
-          <!-- <table width="100%" align="center" border="0" cellspacing="0" cellpadding="10">
-            <heading>Academic Services</heading>
-              <tr>
-                <td>
-                  
-                  <ul>
-                      <li> <strong>Conference Reviewer</strong>: CVPR, ICCV, NeurIPS <br> -->
-          <!-- <li> <strong>Journal Reviewer</strong>: TPAMI, CVIU
-                  </ul>
-                </td>
-              </tr>
-          </table> -->
 
           <table width="100%" align="center" border="0" cellspacing="0" cellpadding="10">
             <tr>
